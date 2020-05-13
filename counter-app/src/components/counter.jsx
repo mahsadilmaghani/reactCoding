@@ -11,12 +11,16 @@ class Counter extends Component {
         fontSize: 50,
         fontWeight: 'bold'
     };
+
+    handleIncrement = () => {
+        console.log("Increment Clicked!", this);
+    }
     render() { 
         return (
             <div>
                 <img src={this.state.imageUrl} alt=""/>
                 <span style={this.styles} className={ this.getBadgeClasses() }>{this.formatCount()}</span>
-                <button className="btn btn-secondary btn-sm">Increment</button>
+                <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
                 <p>{this.state.tags.length === 0 && "There are no tags!"}</p>
                 {this.renderTags()}   
             </div>
