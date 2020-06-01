@@ -8,7 +8,7 @@ class Counter extends Component {
   // };
 
   styles = {
-    fontSize: 50,
+    fontSize: 20,
     fontWeight: 'bold',
   };
 
@@ -20,7 +20,7 @@ class Counter extends Component {
     return (
       <div>
         {this.props.children}
-        <h4>Part {this.props.counter.id}</h4>
+        <h6>Test {this.props.counter.id}</h6>
         <span style={this.styles} className={this.getBadgeClasses()}>
           {this.formatCount()}
         </span>
