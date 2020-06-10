@@ -5,21 +5,26 @@ class Counters extends Component {
   render() {
     const { onReset, onDelete, onIncrement, counters } = this.props;
     return (
-      <div>
+      <div className='row'>
         <br />
-        <button onClick={onReset} className='btn btn-primary btn-sm m2'>
-          Reset
-        </button>
-        {counters.map((counter) => (
-          <Counter
-            key={counter.id}
-            onDelete={this.props.onDelete}
-            onIncrement={this.props.onIncrement}
-            counter={counter}
-          >
-            <h4>Counter #{counter.id}</h4>
-          </Counter>
-        ))}
+        <div className='col-1'>
+          <button onClick={onReset} className='btn btn-primary btn-sm m-2'>
+            Reset
+          </button>
+        </div>
+        <div className='col'>
+          {counters.map((counter) => (
+            <Counter
+              key={counter.id}
+              onDelete={this.props.onDelete}
+              onIncrement={this.props.onIncrement}
+              onDecrement={this.props.onDecrement}
+              counter={counter}
+            >
+              <h4>Counter #{counter.id}</h4>
+            </Counter>
+          ))}
+        </div>
       </div>
     );
   }
